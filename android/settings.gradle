@@ -1,0 +1,3 @@
+rootProject.name = 'pogo'
+
+include ':app'
