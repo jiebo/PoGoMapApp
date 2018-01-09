@@ -12,10 +12,10 @@ class App extends Component {
                 <MapView
                     style={{flex:1,alignItems:'center',justifyContent:'center',alignSelf:'stretch'}}
                     initialRegion={{
-                        latitude: 37.78825,
-                        longitude: -122.4324,
-                        latitudeDelta: 0.0922,
-                        longitudeDelta: 0.0421,
+                        latitude: 1.3521,
+                        longitude: 103.8198,
+                        latitudeDelta: 0.3688,
+                        longitudeDelta: 0.1684,
                     }}
                 />
             </View>
