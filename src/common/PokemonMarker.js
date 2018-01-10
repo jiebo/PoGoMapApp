@@ -1,16 +1,18 @@
 import React from 'react'
-import Marker from 'react-native-maps'
+import MapView from 'react-native-maps'
 
 const PokemonMarker = (props) => {
-
+    console.log("PokemonMarker");
+    console.log(props.pokemon);
     return (
-        <Marker
+        <MapView.Marker
             coordinate={{
                 latitude: 1.39185941,
                 longitude: 103.87756316,
             }}
+            title="something"
         />
     );
 };
 
-export {PokemonMarker};
+export default PokemonMarker;

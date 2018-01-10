@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {View} from 'react-native';
-import {Header, Map, PokemonMarker} from './common';
+import MapView from 'react-native-maps'
+import {Header, PokemonMap, PokemonMarker} from './common';
 
 class App extends Component {
 
@@ -17,27 +18,17 @@ class App extends Component {
         })
             .then((response) => response.json())
             .then(responseJson => {
-                console.log(responseJson['pokemons']);
                 this.setState({pokemons: responseJson['pokemons']});
             });
     }
 
-    plotPokemons() {
-        return this.state.pokemons.map(pokemon =>
-            <PokemonMarker/>
-        );
-    }
-
     render() {
         const {containerStyle} = styles;
-        console.log(this.state.pokemons);
 
         return (
             <View style={containerStyle}>
                 <Header headerText="PoGoMap"/>
-                <Map>
-                    <PokemonMarker/>
-                </Map>
+                <PokemonMap pokemons={this.state.pokemons} />
             </View>
         );
     };

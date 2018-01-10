@@ -13,7 +13,9 @@ const Map = (props) => {
                 latitudeDelta: 0.3688,
                 longitudeDelta: 0.1684,
             }}
-        />
+        >
+            {props.children}
+        </MapView>
     );
 };
 
@@ -26,4 +28,4 @@ const styles = {
     }
 };
 
-export {Map}
+export default Map;
