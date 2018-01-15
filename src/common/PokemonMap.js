@@ -1,20 +1,14 @@
 import React, {Component} from 'react';
-import Map from "./Map";
-import PokemonMarker from "./PokemonMarker";
+import {Map} from "./Map";
+import {PokemonMarker} from "./PokemonMarker";
 
 class PokemonMap extends Component {
 
     plotMarkers(pokemons) {
         console.log("Length of array is " + pokemons.length);
-        pokemons.map(pokemon =>
-            console.log(pokemon.lat)
-        );
-        // pokemons.map(pokemon => {
-            return (
-                <PokemonMarker
-                    pokemon="something"/>
-            );
-        // });
+        return (pokemons.map(pokemon =>
+            <PokemonMarker key={pokemon.lat} pokemon={pokemon}/>
+        ));
     }
 
     render() {
@@ -22,8 +16,7 @@ class PokemonMap extends Component {
         const {pokemons} = this.props;
         return (
             <Map>
-                <PokemonMarker
-                pokemon={"something"}/>
+                {this.plotMarkers(pokemons)}
             </Map>
         );
     }
