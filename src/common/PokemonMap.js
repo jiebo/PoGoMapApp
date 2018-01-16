@@ -7,7 +7,7 @@ class PokemonMap extends Component {
     plotMarkers(pokemons) {
         console.log("Length of array is " + pokemons.length);
         return (pokemons.map(pokemon =>
-            <PokemonMarker key={pokemon.lat} pokemon={pokemon}/>
+            <PokemonMarker key={pokemon.lat+pokemon.lng} pokemon={pokemon}/>
         ));
     }
 
