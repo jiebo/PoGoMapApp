@@ -1,5 +1,6 @@
 import React from 'react'
 import MapView from 'react-native-maps'
+import {Image, View} from "react-native";
 
 
 const PokemonMarker = ({pokemon}) => {
@@ -11,9 +12,12 @@ const PokemonMarker = ({pokemon}) => {
                 latitude: Number(lat),
                 longitude: Number(lng),
             }}
-            title={pokemon_id}
-            image={ICONS[pokemon_id]}
-        />
+            title={pokemon_id}>
+            <Image
+                source={ICONS[pokemon_id]}
+                style={{width: 40, height: 40}}
+                />
+        </MapView.Marker>
     );
 };
 
