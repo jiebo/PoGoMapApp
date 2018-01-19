@@ -1,10 +1,12 @@
 import React from 'react'
 import MapView from 'react-native-maps'
-import {Image, View} from "react-native";
+import {Image} from "react-native";
 
 
-const PokemonMarker = ({pokemon}) => {
-    const {pokemon_id, lat, lng} = pokemon;
+const PokemonMarker = ({pokemon, removeMarkerMethod}) => {
+    const {pokemon_id, lat, lng, despawn} = pokemon;
+    if (pokemon_id === 349)
+        removeMarkerMethod();
 
     return (
         <MapView.Marker
